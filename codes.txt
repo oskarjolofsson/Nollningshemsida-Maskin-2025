@@ -1,0 +1,5 @@
+API-key: AIzaSyAFR2lHzkj4bO3zZ13afczzybf07I1fL1I
+Client ID: 814088766734-rhpq23b9m069k5a1k9kc406c0tpptpp3.apps.googleusercontent.com
+Client Secret: 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
+
+Calendar ID: c_fb49ccf9f14b8ff9908c636dc829a6cf0a50ad8813146f0e8dbbcf61e332f02d@group.calendar.google.com

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Calendar</title>
+    <link rel="stylesheet" href="calendar-styles.css">
+</head>
+<body>
+    <div class="calendar">
+        <div class="week-container" id="week1">
+            <h2>Week 1</h2>
+            <div class="week"></div>
+        </div>
+        <div class="week-container" id="week2">
+            <h2>Week 2</h2>
+            <div class="week"></div>
+        </div>
+        <div class="week-container" id="week3">
+            <h2>Week 3</h2>
+            <div class="week"></div>
+        </div>
+        <div class="week-container" id="week4">
+            <h2>Week 4</h2>
+            <div class="week"></div>
+        </div>
+    </div>
+
+    <div id="event-details" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="event-title"></h2>
+            <p id="event-time"></p>
+            <p id="event-description"></p>
+            <p id="event-location"></p>
+        </div>
+    </div>
+
+    <script src="calendar-events.js"></script>
+    <script src="calendar-script.js"></script>
+</body>
+</html>
