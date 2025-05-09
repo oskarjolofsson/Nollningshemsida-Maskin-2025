@@ -39,7 +39,7 @@ function renderCalendar() {
         // Loop through each event for the current day
         dayEvents.forEach(event => {
             // Create an element for the event
-            const eventElement = document.createElement('div');
+            const eventElement = document.createElement('div'); 
             eventElement.classList.add('event');
             eventElement.textContent = event.title; // Set the event title as the text content
             // Add a click event listener to display event details in the modal

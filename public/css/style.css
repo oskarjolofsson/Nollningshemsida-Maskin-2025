@@ -5,18 +5,18 @@
 @font-face {
     font-family: ethnocentric;
     font-style: normal;
-    src: url("Fonts/1412464/b8d7641c-f2fa-48b4-81d2-25f0bf5bc4f7.woff2") format("woff2"), url("Fonts/1412464/a249ec1d-0e95-40d1-8e9c-49f682284265.woff") format("woff");
+    src: url("../Fonts/1412464/b8d7641c-f2fa-48b4-81d2-25f0bf5bc4f7.woff2") format("woff2"), url("../Fonts/1412464/a249ec1d-0e95-40d1-8e9c-49f682284265.woff") format("woff");
 }
 
 @font-face {
     font-family: kumbh-sans;
     font-weight: 100 900;
-    src: url("Fonts/kumbh-sans/KumbhSans-VariableFont_YOPQ\,wght.ttf") format("truetype");
+    src: url("../Fonts/kumbh-sans/KumbhSans-VariableFont_YOPQ\,wght.ttf") format("truetype");
 }
 @font-face {
     font-family: ESCARGOT;
     font-weight: 100 900;
-    src: url("Fonts/ESCARGOT/ESKARGOT.ttf") format("truetype");
+    src: url("../Fonts/Cinzel/Cinzel-VariableFont_wght.ttf") format("truetype");
 }
 
 :root {
@@ -35,7 +35,7 @@
 }
 
 body {
-    background-image: url(images/forrest3.jpeg);
+    background-image: url(../images/AboveTheClouds1.png);
     margin: 0;
     padding: 0;
     font-family: sans-serif;
