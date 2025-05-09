@@ -11,7 +11,7 @@
 @font-face {
     font-family: kumbh-sans;
     font-weight: 100 900;
-    src: url("../Fonts/kumbh-sans/KumbhSans-VariableFont_YOPQ\,wght.ttf") format("truetype");
+    src: url("../Fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
 }
 @font-face {
     font-family: ESCARGOT;
@@ -26,6 +26,9 @@
     --ruby-red: #9B111E;
     --silver: #C0C0C0;
     --white: #FFFF;
+    --gold: #D4AF37;
+    --dark-blue: #152040;
+    --light-blue: #3958AD;
 
     --border-radius-small: 10px;
     --border-radius-large: 25px;
@@ -131,8 +134,8 @@ button:active{
     transform: scale(1); /* Scale the button by x% */
     padding: 1px 10px;
     color: #ffffff;
-    background-color: var(--ruby-red);
-    border: 2px solid var(--ruby-red);
+    background-color: var(--gold);
+    border: 2px solid var(--gold);
     border-radius: var(--border-radius-large);
     display: flex;
     align-items: center;
@@ -220,7 +223,7 @@ button:active{
 
 
 .section a:hover {
-    color: var(--ruby-red);
+    color: var(--gold);
     text-decoration: none;
 }
 
@@ -302,7 +305,7 @@ button:active{
 
 header {
     font-family: ESCARGOT, sans-serif;
-    background-color: var(--sticky-black);
+    background-color: var(--dark-blue);
     margin-top: 0px;
     right: 0;
     left: 0;
@@ -338,7 +341,7 @@ header a {
 }
 
 header a:hover {
-    color: var(--ruby-red);
+    color: var(--gold);
 }
 
 @media screen and (max-width: 1200px) {
@@ -547,7 +550,7 @@ header a:hover {
 }
 
 #nationer a:hover p{
-    color: var(--ruby-red);
+    color: var(--gold);
 }
 
 #af img {
@@ -618,7 +621,7 @@ header a:hover {
 }
 
 .footer a:hover {
-    color: var(--ruby-red);
+    color: var(--gold);
     text-decoration: none;
 }
 .flex-container {

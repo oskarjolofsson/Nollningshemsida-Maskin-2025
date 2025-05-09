@@ -13,9 +13,6 @@ app.use(express.static("public"));
 // API route to fetch events
 app.get("/api/events", async (req, res) => {
   try {
-    console.log("Using Calendar ID:", calendarId);
-    console.log("Using API Key:", apiKey);
-
     const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}`;
     const response = await fetch(url);
     const data = await response.json();
