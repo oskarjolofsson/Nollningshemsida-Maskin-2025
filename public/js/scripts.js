@@ -12,56 +12,56 @@ let initOffset = startContainer.clientHeight;
 
 // Utility function to update offsets
 function updateOffsets() {
-    sticky = header.offsetTop;
-    initOffset = startContainer.clientHeight;
+  sticky = header.offsetTop;
+  initOffset = startContainer.clientHeight;
 }
 
 // Handle window resizing and update UI accordingly
 function handleResize() {
-    const isCurrentlySmallScreen = window.innerWidth <= 1200;
+  const isCurrentlySmallScreen = window.innerWidth <= 1200;
 
-    if (isCurrentlySmallScreen !== isSmallScreen) {
-        isSmallScreen = isCurrentlySmallScreen;
+  if (isCurrentlySmallScreen !== isSmallScreen) {
+    isSmallScreen = isCurrentlySmallScreen;
 
-        if (isSmallScreen) {
-            menuBtn.style.visibility = "visible";
-            downarrow.hidden = true;
-            closeBtn.hidden = false;
-            menu.style.width = "0%";
-        } else {
-            menuBtn.style.visibility = "hidden";
-            downarrow.hidden = false;
-            closeBtn.hidden = true;
-            menu.style.width = "100%";
-        }
-
-        updateOffsets();
+    if (isSmallScreen) {
+      menuBtn.style.visibility = "visible";
+      downarrow.hidden = true;
+      closeBtn.hidden = false;
+      menu.style.width = "0%";
+    } else {
+      menuBtn.style.visibility = "hidden";
+      downarrow.hidden = false;
+      closeBtn.hidden = true;
+      menu.style.width = "100%";
     }
+
+    updateOffsets();
+  }
 }
 
 // Handle the sticky header functionality on scroll
 function handleScroll() {
-    if (!isSmallScreen) {
-        if (window.scrollY > sticky) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
-        }
+  if (!isSmallScreen) {
+    if (window.scrollY > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
     }
+  }
 }
 
 // Open the menu for small screens
 function openMenu() {
-    menuBtn.style.visibility = "hidden";
-    menu.style.width = "100%";
+  menuBtn.style.visibility = "hidden";
+  menu.style.width = "100%";
 }
 
 // Close the menu for small screens
 function closeMenu() {
-    if (isSmallScreen) {
-        menuBtn.style.visibility = "visible";
-        menu.style.width = "0%";
-    }
+  if (isSmallScreen) {
+    menuBtn.style.visibility = "visible";
+    menu.style.width = "0%";
+  }
 }
 
 // Event listeners
@@ -74,24 +74,38 @@ menuBtn.addEventListener("click", openMenu);
 // Initial offset update on load
 updateOffsets();
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper(".swiper", {
   // Optional parameters
   loop: true,
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 
   // And if we need scrollbar
+});
 
-});/* 
+// Add this to your JS to trigger the animation on scroll
+document.querySelectorAll(".section").forEach((section) => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    },
+    { threshold: 0.1 }
+  );
+  observer.observe(section);
+});
+
+/* 
 window.onload = function () {
   var Vbtn0 = document.getElementById("Vbtn0");
   var Vbtn1 = document.getElementById("Vbtn1");
