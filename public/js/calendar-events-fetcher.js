@@ -12,11 +12,19 @@ const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/even
 // Initialize an empty array to store the fetched events
 const events = [];
 
+// Helper to extract fields from description
+function extractField(description, field) {
+  if (!description) return "";
+  const regex = new RegExp(`${field}\\s*[:：]\\s*([^\\n\\r]+)`, "i");
+  const match = description.match(regex);
+  return match ? match[1].trim() : "";
+}
+
 // Use the Fetch API to send a GET request to the Google Calendar API
 fetch("/api/events")
   .then((response) => {
     if (!response.ok) {
-      throw new Error('HTTP error, status = ' + response.status);
+      throw new Error("HTTP error, status = " + response.status);
     }
     return response.json(); // Parse the response as JSON
   })
@@ -24,18 +32,42 @@ fetch("/api/events")
     console.log("Fetched events from backend:", data);
     // Iterate over the list of events returned by the API
     data.items.forEach((item) => {
-      // Push each event into the `events` array with the desired structure
+      let desc = item.description || "";
+
+      // Extract fields
+      const dressCode =
+        extractField(desc, "Klädkod") || extractField(desc, "Dress code");
+      const location = extractField(desc, "Plats") || item.location || "";
+
+      // Remove extracted fields from description
+      desc = desc
+        .replace(/Klädkod\s*[:：]\s*[^\n\r]+/i, "")
+        .replace(/Dress code\s*[:：]\s*[^\n\r]+/i, "")
+        .replace(/Plats\s*[:：]\s*[^\n\r]+/i, "")
+        .replace(/Location\s*[:：]\s*[^\n\r]+/i, "")
+        .trim();
+
       events.push({
-        // Use the event's start date or dateTime (if available)
         date: item.start.date || item.start.dateTime,
-        // Use the event's summary as the title
         title: item.summary,
-        // If the event has a specific time, format it as a localized time string
         time: item.start.dateTime
-          ? new Date(item.start.dateTime).toLocaleTimeString()
+          ? new Date(item.start.dateTime).toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: false,
+            })
           : "",
-        // Use the event's description, or an empty string if not provided
-        description: item.description || "",
+        endTime:
+          item.end && item.end.dateTime
+            ? new Date(item.end.dateTime).toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+              })
+            : "",
+        description: desc,
+        dressCode,
+        location,
       });
     });
     // Log the imported events to the console for debugging or verification

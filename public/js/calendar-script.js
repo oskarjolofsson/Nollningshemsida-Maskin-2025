@@ -45,7 +45,7 @@ function renderCalendar() {
             // Add a click event listener to display event details in the modal
             eventElement.addEventListener('click', () => {
                 eventTitle.textContent = event.title; // Set the event title in the modal
-                eventTime.innerHTML = `<strong>Tid:</strong> ${event.time}`; // Set the event time in the modal
+                eventTime.innerHTML = `<strong>Tid:</strong> ${event.time} - ${event.endTime}`; // Set the event time in the modal
                 eventDescription.innerHTML = `<strong>Klädkod:</strong> ${event.dressCode}<br><br>${event.description}`; // Set the event description and dress code
                 eventLocation.innerHTML = `<strong>Plats:</strong> ${event.location}`; // Set the event location
                 eventDetailsModal.style.display = 'block'; // Show the modal
