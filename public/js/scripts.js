@@ -92,18 +92,18 @@ const swiper = new Swiper(".swiper", {
   // And if we need scrollbar
 });
 
-// Add this to your JS to trigger the animation on scroll
-document.querySelectorAll(".section").forEach((section) => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    },
-    { threshold: 0.1 }
-  );
-  observer.observe(section);
-});
+// //animation on scroll
+// document.querySelectorAll(".section").forEach((section) => {
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) entry.target.classList.add("visible");
+//       });
+//     },
+//     { threshold: 0.1 }
+//   );
+//   observer.observe(section);
+// });
 
 /* 
 window.onload = function () {
