@@ -196,6 +196,7 @@ button.CTA:hover {
   top: 50px;
   z-index: 1000;
   font-size: 4rem;
+  display: none;
 }
 
 #downarrow {
@@ -463,6 +464,10 @@ header a:hover {
   header a {
     display: block;
     padding: 40px 0px;
+  }
+
+  #menuBtn {
+    display: block;
   }
 }
 
