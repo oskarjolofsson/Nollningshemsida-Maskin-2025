@@ -1,14 +1,3 @@
-// Define the Google Calendar ID for the calendar you want to fetch events from
-const calendarId =
-  "c_fb49ccf9f14b8ff9908c636dc829a6cf0a50ad8813146f0e8dbbcf61e332f02d@group.calendar.google.com";
-
-// Define the API key to authenticate requests to the Google Calendar API
-const apiKey = "AIzaSyAFR2lHzkj4bO3zZ13afczzybf07I1fL1I";
-
-// Construct the URL for the Google Calendar API endpoint to fetch events
-// The URL includes the calendar ID and the API key as query parameters
-const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}`;
-
 // Initialize an empty array to store the fetched events
 const events = [];
 
