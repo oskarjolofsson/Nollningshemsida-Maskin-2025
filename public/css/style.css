@@ -303,6 +303,21 @@ button.CTA:hover {
   height: auto;
 }
 
+#kårphos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between images */
+}
+
+#kårphos img {
+  width: 250px;
+  height: auto;
+  border-radius: var(--border-radius-small);
+  object-fit: cover;
+}
+
 .gallWText {
   flex-basis: 200px;
   flex-grow: 1;
@@ -341,22 +356,23 @@ header {
   margin-top: 0px;
   right: 0;
   left: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.3rem;
-
   overflow: hidden;
-
   position: relative;
   z-index: 2;
-  padding: 18px 40px;
+  padding: 18px 20px; /* Reduced horizontal padding */
   border-radius: 0 0 24px 24px;
+  max-width: 1500px; /* Limit width */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto;
+  width: 100%;
 }
 
 header ul {
-  gap: 2rem;
+  gap: 1rem;
   display: flex;
   align-items: center;
 }
@@ -491,6 +507,14 @@ header a:hover {
   .section {
     padding: 1rem;
     font-size: 1rem;
+  }
+  #kårphos {
+    flex-direction: column;
+    align-items: center;
+  }
+  #kårphos img {
+    width: 90vw;
+    max-width: 250px;
   }
 }
 /*SWIPER*/

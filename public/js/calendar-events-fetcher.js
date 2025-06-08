@@ -10,7 +10,7 @@ function extractField(description, field) {
 }
 
 // Use the Fetch API to send a GET request to the Google Calendar API
-fetch("/api/events")
+fetch("https://nollehemsida25-backend.onrender.com/api/events")
   .then((response) => {
     if (!response.ok) {
       throw new Error("HTTP error, status = " + response.status);

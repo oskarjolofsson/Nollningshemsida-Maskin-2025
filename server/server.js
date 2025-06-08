@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 // Environment variables for sensitive data
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 // Serve static files from the "public" folder
 app.use(express.static("public"));
+app.use(cors()); // Enable CORS for all routes
 
 // API route to fetch events
 app.get("/api/events", async (req, res) => {
